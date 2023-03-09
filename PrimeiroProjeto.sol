@@ -12,9 +12,9 @@ contract PrimeiroProjeto {
         string mensagem;
     }
     
-    mapping (uint => address) contaUsuario;
-    
     QuemMeConsulta[] public consultas;
+    
+    mapping (uint => address) contaUsuario;
 
     function QuandoIniciou() public view returns (string memory) {
         return datadenascimento;
