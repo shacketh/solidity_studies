@@ -12,6 +12,8 @@ contract PrimeiroProjeto {
         string mensagem;
     }
     
+    mapping (uint => address) contaUsuario;
+    
     QuemMeConsulta[] public consultas;
 
     function QuandoIniciou() public view returns (string memory) {
