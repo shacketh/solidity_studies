@@ -14,7 +14,8 @@ contract PrimeiroProjeto {
     
     QuemMeConsulta[] public consultas;
     
-    mapping (uint => address) contaUsuario;
+    mapping (uint => address) enderecoConsulta;
+    mapping (address => uint) consultasEndereco;
 
     function QuandoIniciou() public view returns (string memory) {
         return datadenascimento;
@@ -24,6 +25,8 @@ contract PrimeiroProjeto {
         consultas.push(QuemMeConsulta(_nome, _mensagem));
         uint idConsulta = consultas.length - 1;
         uint random = uint(keccak256(abi.encodePacked(_mensagem)));
+        enderecoConsultas[idConsulta] = msg.sender;
+        consultasEndereco[msg.sender]++;
         emit NovaConsulta(idConsulta, _nome, _mensagem, random);
         return random;
     }
