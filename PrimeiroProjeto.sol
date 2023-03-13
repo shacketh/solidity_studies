@@ -32,6 +32,7 @@ contract PrimeiroProjeto {
     }
 
     function ConsultaAnonima(string memory _mensagem) public {
+        require(consultasEndereco[msg.sender] == 0);
         FazerConsulta("anonimo", _mensagem);
     }
 }
