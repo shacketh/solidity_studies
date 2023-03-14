@@ -36,3 +36,7 @@ contract PrimeiroProjeto {
         FazerConsulta("anonimo", _mensagem);
     }
 }
+
+contract ConsultaPremiada is PrimeiroProjeto {
+
+}
