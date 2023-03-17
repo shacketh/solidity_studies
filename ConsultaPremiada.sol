@@ -5,9 +5,11 @@ import "./PrimeiroProjeto.sol";
 
 contract ConsultaPremiada is PrimeiroProjeto {
     
-    function sorteioVencedor(uint _idConsulta) public returns (string memory) {
+    function sorteioVencedor(uint _idConsulta) public view returns (string memory) {
         require(msg.sender == enderecoConsulta[_idConsulta]);
         QuemMeConsulta storage MinhaConsulta = consultas[_idConsulta];
+        string memory minhaMensagem = MinhaConsulta.mensagem;
+        return minhaMensagem;
     }
 
 }
